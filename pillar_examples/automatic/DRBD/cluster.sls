@@ -1,6 +1,5 @@
 cluster:
-  # Need to adapt
-  install_packages: false
+  install_packages: true
   name: 'drbd_cluster'
   init: {{ grains['name_prefix'] }}01
   interface: eth0
@@ -27,5 +26,3 @@ cluster:
         virtual_ip: {{ ".".join(grains['host_ip'].split('.')[0:-1]) }}.200
         virtual_ip_mask: 24
         platform: libvirt
-        prefer_takeover: true
-        auto_register: false
